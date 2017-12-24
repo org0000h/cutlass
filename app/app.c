@@ -25,14 +25,12 @@ Except_T Failed4 = { "e4"};
 int main(){
 	TRY
 	{
-
 		/* dynamic memory */
 		int *a;
 		NEW0(a);
 		*a = 2;
 		PRINT_LOG_INFO("a = %d",*a);
 		FREE(a);
-
 		Arena_T m = Arena_new();
 		a = M_alloc(m, sizeof(a));
 		Arena_free(m);
@@ -43,8 +41,8 @@ int main(){
 		Array_put(arry,0,&a0);
 		int *bb = Array_get(arry,0);
 		PRINT_LOG_INFO("bb = %d", *bb);
-
-		/* stack  */
+        
+        /* stack  */
 		Stack_T stack = Stack_new();
 		Stack_push(stack, &a0);
 		int *aa = (int *)Stack_pop(stack);

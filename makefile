@@ -1,5 +1,5 @@
 
-CC = gcc
+CC = cc
 CFLAGS= -g -o2 -Wall -std=c89 
 LDFLAGS= 
 
