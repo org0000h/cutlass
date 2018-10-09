@@ -4,10 +4,10 @@ CFLAGS = -g -o2 -Wall #-std=c89
 LDFLAGS = 
 MACRO = 
 INC_DIR = -I Library/API/DataStructure
-INC_DIR += -I Library/API/Service
+INC_DIR += -I Library/API/
 
 DataStructureClass = Library/modules/DataStructure
-serviceWrapperClass = Library/modules/Service
+serviceWrapperClass = Library/modules/
 app = app/
 
 SRC = $(wildcard Library/modules/DataStructure/*.c)
