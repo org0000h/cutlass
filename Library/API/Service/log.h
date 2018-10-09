@@ -26,38 +26,34 @@ if not,the log code will not be compiled to the program. */
 
 /*#define USE_SYSLOG*/
 
-
-
-
-
-
-/* ============usually shouldn't be changed by user down below=================== */
-
 #ifdef LOG_ON
 
 /*log level*/
-#define ERR  0
-#define WARN 1
-#define INFO 2
+enum{
+	ERR,
+	WARN,
+	INFO
+};
 
-#define SYSLOG_LOG_INFO(format, ...)  syslog(LOG_INFO,"%s[ %s() %s: %d]:  "format"\n",\
+#define SYSLOG_LOG_INFO(format, ...)  syslog(LOG_INFO,"%4s[ %s() %s: %d]:  "format"\n",\
              "INFO",  __FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
 
-#define SYSLOG_LOG_WARN(format, ...)  syslog(LOG_WARNING,"%s[ %s %s: %d]:  "format"\n",\
+#define SYSLOG_LOG_WARN(format, ...)  syslog(LOG_WARNING,"%4s[ %s %s: %d]:  "format"\n",\
                 "WARN",__FUNCTION__, __FILE__, __LINE__,  ##__VA_ARGS__)
 
-#define SYSLOG_LOG_ERR(format, ...)  syslog(LOG_ERR,"%s[ %s %s: %d]:  "format"\n",\
+#define SYSLOG_LOG_ERR(format, ...)  syslog(LOG_ERR,"%4s[ %s %s: %d]:  "format"\n",\
 			 "ERR",__FUNCTION__, __FILE__, __LINE__,  ##__VA_ARGS__)
 
 /* for MCU*/
-#define NORM_LOG_INFO(format, ...)   printf("%s[%s() %s: %d]: "format"\n",\
+#define printf printf
+#define NORM_LOG_INFO(format, ...)   printf("%4s[%s() %s: %d]: "format"\n",\
 				"INFO",__FUNCTION__, __FILE__, __LINE__,  ##__VA_ARGS__)
 
-#define NORM_LOG_WARN(format, ...)  printf("%s[%s() %s: %d]: "format"\n",\
+#define NORM_LOG_WARN(format, ...)  printf("%4s[%s() %s: %d]: "format"\n",\
 				"WARN",__FUNCTION__, __FILE__, __LINE__,  ##__VA_ARGS__)
 
-#define NORM_LOG_ERR(format, ...)     printf("%s[%s() %s: %d]: "format"\n",\
-				"▲ERR", __FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
+#define NORM_LOG_ERR(format, ...)     printf("%4s[%s() %s: %d]: "format"\n",\
+				"ERR ", __FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
 
 /*  */
 #ifdef USE_SYSLOG
