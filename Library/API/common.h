@@ -29,6 +29,6 @@
 #define BSWAP_64(x) ((BSWAP_32(x) << 32) | BSWAP_32((x) >> 32))
 
 void memoryDump(char *buf,int len);
-uint32_t runTimesCounter();
+uint32_t runTimesCounter(void);
 
 #endif /* LIBRARY_API_SERVICE_COMMON_H_ */

@@ -31,7 +31,7 @@ typedef struct {
 // prototypes
 
 buffer_t *
-buffer_new();
+buffer_new(void);
 
 buffer_t *
 buffer_new_with_size(size_t n);

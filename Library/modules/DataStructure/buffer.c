@@ -27,7 +27,7 @@
  */
 
 buffer_t *
-buffer_new() {
+buffer_new(void) {
   return buffer_new_with_size(BUFFER_DEFAULT_SIZE);
 }
 
@@ -148,7 +148,7 @@ int buffer_appendf(buffer_t *self, const char *format, ...) {
   va_list ap;
   va_list tmpa;
   char *dst = NULL;
-  int length = 0;
+  size_t length = 0;
   int required = 0;
   int bytes = 0;
 
