@@ -24,7 +24,7 @@ if not,the log code will not be compiled to the program. */
 /* log level for printing */
 #define LOG_LEVEL INFO
 
-#define USE_SYSLOG
+/*#define USE_SYSLOG*/
 
 #ifdef LOG_ON
 
@@ -50,7 +50,7 @@ if not,the log code will not be compiled to the program. */
 				"WARN",__FUNCTION__, __FILE__, __LINE__,  ##__VA_ARGS__)
 
 #define NORM_LOG_ERR(format, ...)     printf("%s[%s() %s: %d]: "format"\n",\
-				"ERR ", __FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
+				"▲ERR", __FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
 
 /*  */
 #ifdef USE_SYSLOG
