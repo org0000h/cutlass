@@ -9,7 +9,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include "assert.h"
 #include "mem.h"
 #include "array.h"
 #include "log.h"

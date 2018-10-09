@@ -1,6 +1,6 @@
 
 CC = cc
-CFLAGS = -g -o2 -Wall -std=c89 
+CFLAGS = -g -o2 -Wall #-std=c89 
 LDFLAGS = 
 MACRO = 
 INC_DIR = -I Library/API/DataStructure

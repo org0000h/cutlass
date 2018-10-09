@@ -26,6 +26,13 @@ if not,the log code will not be compiled to the program. */
 
 /*#define USE_SYSLOG*/
 
+
+
+
+
+
+/* ============usually shouldn't be changed by user down below=================== */
+
 #ifdef LOG_ON
 
 /*log level*/
