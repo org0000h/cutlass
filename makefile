@@ -20,4 +20,4 @@ all:
 	@echo =================start compiling ...=========================
 	@echo [compling path]:$(ROOT_DIR)
 	@echo $(SUBDIRS)
-	$(CC) $(CFLAGS)  $(INC_DIR) $(SRC) $(MACRO) -o app.bin
+	$(CC) $(CFLAGS)  $(INC_DIR) $(SRC) $(MACRO) -o program.bin
