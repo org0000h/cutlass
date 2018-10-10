@@ -9,11 +9,11 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#include "ClassString.h"
 #include "log.h"
 
 #include "common.h"
 #include "list.h"
-#include "buffer.h"
 int main(){
 
     int aa1 = 1;
@@ -24,9 +24,9 @@ int main(){
 //>>>>>>>>>>>>>>>>>>>> list >>>>>>>>>>>>>>>>>>>>>>>
     list_t *langs = list_new();
 
-    list_node_t *c = list_rpush(langs, list_node_new("c"));
-    list_node_t *js = list_rpush(langs, list_node_new("js"));
-    list_node_t *ruby = list_rpush(langs, list_node_new("ruby"));
+    list_rpush(langs, list_node_new("c"));
+    list_rpush(langs, list_node_new("js"));
+    list_rpush(langs, list_node_new("ruby"));
 
     list_node_t *node;
     list_iterator_t *it = list_iterator_new(langs, LIST_HEAD);
@@ -39,17 +39,14 @@ int main(){
 //<<<<<<<<<<<<<<<<<<<<<< list <<<<<<<<<<<<<<<<<<<<<
 
 //>>>>>>>>>>>>>>>>>>>>>> string >>>>>>>>>>>>>>>>>>>
-//    char *s = "hello";
-//    buffer_t * str = buffer_new_with_string(s);
-//    if(str == NULL){
-//    	printf("NULL\n");
-//    	return ;
-//    }else {
-//    	printf("not \n");
-//    }
-//    printf(" %s fdsa\n",str->data);
-//    buffer_append(str, "world");
-////    buffer_print(str);
+    string_t * str = string_new_with_string_copy("hello");
+    printf("%s\n",string_get(str));
+    string_append(str, "world");
+    printf("%s\n",string_get(str));
+    if(string_prepend(str, "pre ") <0){
+        printf("error\n");
+    }
+    printf("%s\n",string_get(str));
 //<<<<<<<<<<<<<<<<<<<<<< string <<<<<<<<<<<<<<<<<<<
 	return 0;
 }
