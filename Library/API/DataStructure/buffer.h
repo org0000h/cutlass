@@ -37,19 +37,19 @@ buffer_t *
 buffer_new_with_size(size_t n);
 
 buffer_t *
-buffer_new_with_string(char *str);
+buffer_new_with_string_in_heap(char *str);
 
 buffer_t *
-buffer_new_with_string_length(char *str, size_t len);
+buffer_new_with_string_length_in_heap(char *str, size_t len);
 
 buffer_t *
-buffer_new_with_copy(char *str);
+buffer_new_with_string_copy(char *str);
 
 size_t
 buffer_size(buffer_t *self);
 
 size_t
-buffer_length(buffer_t *self);
+buffer_string_length(buffer_t *self);
 
 void
 buffer_free(buffer_t *self);

@@ -49,8 +49,8 @@ buffer_new_with_size(size_t n) {
  */
 
 buffer_t *
-buffer_new_with_string(char *str) {
-  return buffer_new_with_string_length(str, strlen(str));
+buffer_new_with_string_in_heap(char *str) {
+  return buffer_new_with_string_length_in_heap(str, strlen(str));
 }
 
 /*
@@ -58,7 +58,7 @@ buffer_new_with_string(char *str) {
  */
 
 buffer_t *
-buffer_new_with_string_length(char *str, size_t len) {
+buffer_new_with_string_length_in_heap(char *str, size_t len) {
   buffer_t *self = malloc(sizeof(buffer_t));
   if (!self) return NULL;
   self->len = len;
@@ -71,7 +71,7 @@ buffer_new_with_string_length(char *str, size_t len) {
  */
 
 buffer_t *
-buffer_new_with_copy(char *str) {
+buffer_new_with_string_copy(char *str) {
   size_t len = strlen(str);
   buffer_t *self = buffer_new_with_size(len);
   if (!self) return NULL;
@@ -87,7 +87,7 @@ buffer_new_with_copy(char *str) {
 
 ssize_t
 buffer_compact(buffer_t *self) {
-  size_t len = buffer_length(self);
+  size_t len = buffer_string_length(self);
   size_t rem = self->len - len;
   char *buf = calloc(len + 1, 1);
   if (!buf) return -1;
@@ -122,7 +122,7 @@ buffer_size(buffer_t *self) {
  */
 
 size_t
-buffer_length(buffer_t *self) {
+buffer_string_length(buffer_t *self) {
   return strlen(self->data);
 }
 
@@ -154,7 +154,7 @@ int buffer_appendf(buffer_t *self, const char *format, ...) {
 
   va_start(ap, format);
 
-  length = buffer_length(self);
+  length = buffer_string_length(self);
 
   // First, we compute how many bytes are needed
   // for the formatted string and allocate that
@@ -229,7 +229,7 @@ buffer_prepend(buffer_t *self, char *str) {
 
   // move
   move:
-  memmove(self->data + len, self->data, len + 1);
+  memmove(self->data + len, self->data, self->len + 1);
   memcpy(self->data, str, len);
 
   return 0;
@@ -298,7 +298,7 @@ buffer_trim_left(buffer_t *self) {
 void
 buffer_trim_right(buffer_t *self) {
   int c;
-  size_t i = buffer_length(self) - 1;
+  size_t i = buffer_string_length(self) - 1;
   while ((c = self->data[i]) && isspace(c)) {
     self->data[i--] = 0;
   }
