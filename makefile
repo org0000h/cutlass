@@ -11,7 +11,7 @@ serviceWrapperClass = Library/modules/
 app = app/
 
 SRC = $(wildcard Library/modules/DataStructure/*.c)
-SRC += $(wildcard Library/modules/Service/*.c)
+SRC += $(wildcard Library/modules/*.c)
 SRC += $(wildcard app/*.c)
 
 SUBDIRS=$(shell ls -l | grep ^d | awk '{if($$9 != "debug") print $$9}')
