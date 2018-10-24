@@ -28,6 +28,14 @@
 #define BSWAP_32(x) ((BSWAP_16(x) << 16) | BSWAP_16((x) >> 16))
 #define BSWAP_64(x) ((BSWAP_32(x) << 32) | BSWAP_32((x) >> 32))
 
+// macro function
+// for input parameter detection in function define
+#define  CHECK_NULL( pointer,returnValue)   \
+    if(pointer == NULL){                    \
+        return returnValue;                 \
+    }
+
+// function
 void memoryDump(char *buf,int len);
 uint32_t runTimesCounter(void);
 
