@@ -3,3 +3,14 @@
 /.cproject
 /app.bin
 /program.bin
+program.bin.dSYM/Contents/Info.plist
+program.bin.dSYM/Contents/Resources/DWARF/program.bin
+Library/console/.DS_Store
+Library/.DS_Store
+.DS_Store
+cutlassXcodeProject/cutlassXcodeProject.xcodeproj/project.xcworkspace/xcuserdata/yazhou.xcuserdatad/UserInterfaceState.xcuserstate
+cutlassXcodeProject/cutlassXcodeProject.xcodeproj/project.pbxproj
+.DS_Store
+.DS_Store
+cutlassXcodeProject/cutlassXcodeProject.xcodeproj/project.pbxproj
+cutlassXcodeProject/cutlassXcodeProject.xcodeproj/project.xcworkspace/xcuserdata/yazhou.xcuserdatad/UserInterfaceState.xcuserstate
