@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				37F1DC132184581C00C35DCD /* app */,
-				37F1DC152184581D00C35DCD /* Library */,
+				37F1DC152184581D00C35DCD /* library */,
 				37F1DC332184581D00C35DCD /* LICENSE */,
 				37F1DC342184581D00C35DCD /* README.md */,
 				37F1DC0A218457D000C35DCD /* Products */,
@@ -99,7 +99,7 @@
 			path = ../app;
 			sourceTree = "<group>";
 		};
-		37F1DC152184581D00C35DCD /* Library */ = {
+		37F1DC152184581D00C35DCD /* library */ = {
 			isa = PBXGroup;
 			children = (
 				37F1DC162184581D00C35DCD /* log.c */,
@@ -110,8 +110,8 @@
 				37F1DC232184581D00C35DCD /* string */,
 				37F1DC262184581D00C35DCD /* console */,
 			);
-			name = Library;
-			path = ../Library;
+			name = library;
+			path = ../library;
 			sourceTree = "<group>";
 		};
 		37F1DC172184581D00C35DCD /* stdHeader */ = {
