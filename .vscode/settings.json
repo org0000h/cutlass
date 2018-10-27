@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "console_api.h": "c",
+        "platform_port.h": "c",
+        "config.h": "c"
+    }
+}

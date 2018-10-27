@@ -14,6 +14,7 @@
 
 #include "common.h"
 #include "list.h"
+#include "console_api.h"
 int main(){
 
     int aa1 = 1;
@@ -48,5 +49,7 @@ int main(){
     }
     printf("%s\n",string_get(str));
 //<<<<<<<<<<<<<<<<<<<<<< string <<<<<<<<<<<<<<<<<<<
+
+    console_daemon_run();
 	return 0;
 }
