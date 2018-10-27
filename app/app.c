@@ -22,7 +22,7 @@ int main(){
     SWAP(aa1, bb1);
     printf("aa=%d,bb=%d\n",aa1, bb1);
 
-//>>>>>>>>>>>>>>>>>>>> list >>>>>>>>>>>>>>>>>>>>>>>
+//
     list_t *langs = list_new();
 
     list_rpush(langs, list_node_new("c"));
@@ -37,9 +37,9 @@ int main(){
 
     list_iterator_destroy(it);
     list_destroy(langs);
-//<<<<<<<<<<<<<<<<<<<<<< list <<<<<<<<<<<<<<<<<<<<<
+//
 
-//>>>>>>>>>>>>>>>>>>>>>> string >>>>>>>>>>>>>>>>>>>
+//
     string_t * str = string_new_with_string_copy("hello");
     printf("%s\n",string_get(str));
     string_append(str, "world");
@@ -48,7 +48,7 @@ int main(){
         printf("error\n");
     }
     printf("%s\n",string_get(str));
-//<<<<<<<<<<<<<<<<<<<<<< string <<<<<<<<<<<<<<<<<<<
+//
 
     console_daemon_run();
 	return 0;
