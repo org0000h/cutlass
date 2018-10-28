@@ -514,12 +514,12 @@ static int common_len (char ** arr)
 	int i;
 	int j;
 	char *shortest = arr[0];
-	int shortlen = strlen(shortest);
+	int shortlen = (int)strlen(shortest);
 
 	for (i = 0; arr[i] != NULL; ++i)
 		if (strlen(arr[i]) < shortlen) {
 			shortest = arr[i];
-			shortlen = strlen(shortest);
+			shortlen = (int)strlen(shortest);
 		}
 
 	for (i = 0; i < shortlen; ++i)
@@ -548,7 +548,7 @@ static void microrl_get_complite (microrl_t  pThis)
 		int len;
 
 		if (compl_token[1] == NULL) {
-			len = strlen (compl_token[0]);
+			len = (int)strlen (compl_token[0]);
 		} else {
 			len = common_len (compl_token);
 			terminal_newline (pThis);
@@ -563,7 +563,7 @@ static void microrl_get_complite (microrl_t  pThis)
 		
 		if (len) {
 			microrl_insert_text (pThis, compl_token[0] + strlen(tkn_arr[status-1]), 
-																	len - strlen(tkn_arr[status-1]));
+                                 len -(int)strlen(tkn_arr[status-1]));
 			if (compl_token[1] == NULL) 
 				microrl_insert_text (pThis, " ", 1);
 		}
