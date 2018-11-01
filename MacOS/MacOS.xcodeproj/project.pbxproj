@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		377EA665218B63CE00CFCAED /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA664218B63CE00CFCAED /* main.c */; };
+		377EA68E218B63E700CFCAED /* sample.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA66D218B63E700CFCAED /* sample.c */; };
+		377EA68F218B63E700CFCAED /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA66F218B63E700CFCAED /* log.c */; };
+		377EA690218B63E700CFCAED /* ClassString.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA672218B63E700CFCAED /* ClassString.c */; };
+		377EA691218B63E700CFCAED /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA678218B63E700CFCAED /* buffer.c */; };
+		377EA692218B63E700CFCAED /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA679218B63E700CFCAED /* list.c */; };
+		377EA693218B63E700CFCAED /* list_iterator.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA67A218B63E700CFCAED /* list_iterator.c */; };
+		377EA694218B63E700CFCAED /* list_node.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA67B218B63E700CFCAED /* list_node.c */; };
+		377EA695218B63E700CFCAED /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 377EA683218B63E700CFCAED /* Makefile */; };
+		377EA696218B63E700CFCAED /* unix_misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA685218B63E700CFCAED /* unix_misc.c */; };
+		377EA697218B63E700CFCAED /* sample.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA688218B63E700CFCAED /* sample.c */; };
+		377EA698218B63E700CFCAED /* microrl.c in Sources */ = {isa = PBXBuildFile; fileRef = 377EA68A218B63E700CFCAED /* microrl.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +34,29 @@
 
 /* Begin PBXFileReference section */
 		377EA661218B63CE00CFCAED /* MacOS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacOS; sourceTree = BUILT_PRODUCTS_DIR; };
-		377EA664218B63CE00CFCAED /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		377EA66D218B63E700CFCAED /* sample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sample.c; sourceTree = "<group>"; };
+		377EA66F218B63E700CFCAED /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = log.c; sourceTree = "<group>"; };
+		377EA671218B63E700CFCAED /* ClassString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassString.h; sourceTree = "<group>"; };
+		377EA672218B63E700CFCAED /* ClassString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ClassString.c; sourceTree = "<group>"; };
+		377EA674218B63E700CFCAED /* stdint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdint.h; sourceTree = "<group>"; };
+		377EA675218B63E700CFCAED /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		377EA678218B63E700CFCAED /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		377EA679218B63E700CFCAED /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
+		377EA67A218B63E700CFCAED /* list_iterator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list_iterator.c; sourceTree = "<group>"; };
+		377EA67B218B63E700CFCAED /* list_node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list_node.c; sourceTree = "<group>"; };
+		377EA67D218B63E700CFCAED /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		377EA67E218B63E700CFCAED /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		377EA67F218B63E700CFCAED /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		377EA680218B63E700CFCAED /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		377EA682218B63E700CFCAED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		377EA683218B63E700CFCAED /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		377EA685218B63E700CFCAED /* unix_misc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unix_misc.c; sourceTree = "<group>"; };
+		377EA686218B63E700CFCAED /* platform_port.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform_port.h; sourceTree = "<group>"; };
+		377EA687218B63E700CFCAED /* console_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = console_config.h; sourceTree = "<group>"; };
+		377EA688218B63E700CFCAED /* sample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sample.c; sourceTree = "<group>"; };
+		377EA68A218B63E700CFCAED /* microrl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = microrl.c; sourceTree = "<group>"; };
+		377EA68B218B63E700CFCAED /* microrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = microrl.h; sourceTree = "<group>"; };
+		377EA68D218B63E700CFCAED /* console_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = console_api.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +73,7 @@
 		377EA658218B63CE00CFCAED = {
 			isa = PBXGroup;
 			children = (
-				377EA663218B63CE00CFCAED /* MacOS */,
+				377EA66B218B63E700CFCAED /* src */,
 				377EA662218B63CE00CFCAED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +86,123 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		377EA663218B63CE00CFCAED /* MacOS */ = {
+		377EA66B218B63E700CFCAED /* src */ = {
 			isa = PBXGroup;
 			children = (
-				377EA664218B63CE00CFCAED /* main.c */,
+				377EA66C218B63E700CFCAED /* app */,
+				377EA66E218B63E700CFCAED /* libraries */,
 			);
-			path = MacOS;
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		377EA66C218B63E700CFCAED /* app */ = {
+			isa = PBXGroup;
+			children = (
+				377EA66D218B63E700CFCAED /* sample.c */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		377EA66E218B63E700CFCAED /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				377EA66F218B63E700CFCAED /* log.c */,
+				377EA670218B63E700CFCAED /* classString */,
+				377EA673218B63E700CFCAED /* stdHeader */,
+				377EA675218B63E700CFCAED /* CMakeLists.txt */,
+				377EA676218B63E700CFCAED /* dataStructure */,
+				377EA67F218B63E700CFCAED /* common.h */,
+				377EA680218B63E700CFCAED /* log.h */,
+				377EA681218B63E700CFCAED /* console */,
+			);
+			path = libraries;
+			sourceTree = "<group>";
+		};
+		377EA670218B63E700CFCAED /* classString */ = {
+			isa = PBXGroup;
+			children = (
+				377EA671218B63E700CFCAED /* ClassString.h */,
+				377EA672218B63E700CFCAED /* ClassString.c */,
+			);
+			path = classString;
+			sourceTree = "<group>";
+		};
+		377EA673218B63E700CFCAED /* stdHeader */ = {
+			isa = PBXGroup;
+			children = (
+				377EA674218B63E700CFCAED /* stdint.h */,
+			);
+			path = stdHeader;
+			sourceTree = "<group>";
+		};
+		377EA676218B63E700CFCAED /* dataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				377EA677218B63E700CFCAED /* implement */,
+				377EA67C218B63E700CFCAED /* api */,
+			);
+			path = dataStructure;
+			sourceTree = "<group>";
+		};
+		377EA677218B63E700CFCAED /* implement */ = {
+			isa = PBXGroup;
+			children = (
+				377EA678218B63E700CFCAED /* buffer.c */,
+				377EA679218B63E700CFCAED /* list.c */,
+				377EA67A218B63E700CFCAED /* list_iterator.c */,
+				377EA67B218B63E700CFCAED /* list_node.c */,
+			);
+			path = implement;
+			sourceTree = "<group>";
+		};
+		377EA67C218B63E700CFCAED /* api */ = {
+			isa = PBXGroup;
+			children = (
+				377EA67D218B63E700CFCAED /* list.h */,
+				377EA67E218B63E700CFCAED /* buffer.h */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		377EA681218B63E700CFCAED /* console */ = {
+			isa = PBXGroup;
+			children = (
+				377EA682218B63E700CFCAED /* LICENSE */,
+				377EA683218B63E700CFCAED /* Makefile */,
+				377EA684218B63E700CFCAED /* portable */,
+				377EA688218B63E700CFCAED /* sample.c */,
+				377EA689218B63E700CFCAED /* implement */,
+				377EA68C218B63E700CFCAED /* api */,
+			);
+			path = console;
+			sourceTree = "<group>";
+		};
+		377EA684218B63E700CFCAED /* portable */ = {
+			isa = PBXGroup;
+			children = (
+				377EA685218B63E700CFCAED /* unix_misc.c */,
+				377EA686218B63E700CFCAED /* platform_port.h */,
+				377EA687218B63E700CFCAED /* console_config.h */,
+			);
+			path = portable;
+			sourceTree = "<group>";
+		};
+		377EA689218B63E700CFCAED /* implement */ = {
+			isa = PBXGroup;
+			children = (
+				377EA68A218B63E700CFCAED /* microrl.c */,
+				377EA68B218B63E700CFCAED /* microrl.h */,
+			);
+			path = implement;
+			sourceTree = "<group>";
+		};
+		377EA68C218B63E700CFCAED /* api */ = {
+			isa = PBXGroup;
+			children = (
+				377EA68D218B63E700CFCAED /* console_api.h */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +261,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377EA665218B63CE00CFCAED /* main.c in Sources */,
+				377EA692218B63E700CFCAED /* list.c in Sources */,
+				377EA697218B63E700CFCAED /* sample.c in Sources */,
+				377EA694218B63E700CFCAED /* list_node.c in Sources */,
+				377EA696218B63E700CFCAED /* unix_misc.c in Sources */,
+				377EA698218B63E700CFCAED /* microrl.c in Sources */,
+				377EA68F218B63E700CFCAED /* log.c in Sources */,
+				377EA68E218B63E700CFCAED /* sample.c in Sources */,
+				377EA690218B63E700CFCAED /* ClassString.c in Sources */,
+				377EA691218B63E700CFCAED /* buffer.c in Sources */,
+				377EA695218B63E700CFCAED /* Makefile in Sources */,
+				377EA693218B63E700CFCAED /* list_iterator.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
