@@ -17,17 +17,12 @@
 #include "console_api.h"
 int main(){
 
-    int aa1 = 1;
-    int bb1 = 2;
-    SWAP(aa1, bb1);
-    printf("aa=%d,bb=%d\n",aa1, bb1);
-
 //
     list_t *langs = list_new();
 
     list_rpush(langs, list_node_new("c"));
     list_rpush(langs, list_node_new("js"));
-    list_rpush(langs, list_node_new("ruby"));
+    list_rpush(langs, list_node_new("python"));
 
     list_node_t *node;
     list_iterator_t *it = list_iterator_new(langs, LIST_HEAD);
