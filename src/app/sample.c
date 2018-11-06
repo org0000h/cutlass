@@ -27,7 +27,7 @@ int main(){
     list_node_t *node;
     list_iterator_t *it = list_iterator_new(langs, LIST_HEAD);
     while ((node = list_iterator_next(it))) {
-      puts(node->val);
+        LOG_INFO("%s",(char *)node->val);
     }
 
     list_iterator_destroy(it);
@@ -36,15 +36,17 @@ int main(){
 
 //
     string_t * str = string_new_with_string_copy("hello");
-    printf("%s\n",string_get(str));
+    LOG_INFO("%s",string_get(str));
     string_append(str, "world");
-    printf("%s\n",string_get(str));
+    LOG_INFO("%s",string_get(str));
     if(string_prepend(str, "pre ") <0){
-        printf("error\n");
+        LOG_INFO("error");
     }
-    printf("%s\n",string_get(str));
+    LOG_INFO("%s",string_get(str));
 //
-
+    LOG_INFO("log test");
+    LOG_WARN("log test");
+    LOG_ERR("log test");
     console_daemon_run();
 	return 0;
 }
