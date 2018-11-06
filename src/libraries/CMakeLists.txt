@@ -13,12 +13,14 @@ set(LIB_INC
 include_directories( ${LIB_INC} )
 
 #all source to be compiled	
+aux_source_directory(./ LOG_LIB_SRCS)
 aux_source_directory(classString/ STRING_LIB_SRCS)
 aux_source_directory(dataStructure/implement DATAST_LIB_SRCS)
 aux_source_directory(console CONSOLE1_LIB_SRCS)
 aux_source_directory(console/implement CONSOLE2_LIB_SRCS)
 aux_source_directory(console/portable CONSOLE3_LIB_SRCS)	
 set(LIB_SRCS 
+    ${LOG_LIB_SRCS} 
 	${STRING_LIB_SRCS} 
 	${DATAST_LIB_SRCS} 
 	${CONSOLE1_LIB_SRCS} 
