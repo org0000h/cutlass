@@ -34,7 +34,7 @@ extern const char *LEVEL_STRING[];
 
 /* for MCU*/
 #define print printf
-#define NORM_LOG(level,format, ...)   print("%4s[%s() %s: %d]: "format"",\
+#define NORM_LOG(level,format, ...)   print("%4s[%s() %s: %d]: "format"\n",\
         LEVEL_STRING[level],__FUNCTION__, __FILE__, __LINE__,  ##__VA_ARGS__)
 
 /*  */
@@ -42,52 +42,40 @@ extern const char *LEVEL_STRING[];
 #include <syslog.h>
 
 #if (LOG_LEVEL <= INFO)
-#define LOG_INFO_LN(format, ...)  SYSLOG_LOG(INFO,format"\n",  ##__VA_ARGS__)
 #define LOG_INFO(format, ...)     SYSLOG_LOG(INFO,format,  ##__VA_ARGS__)
 #else
-#define LOG_INFO_LN(format, ...)  ((void)0)
 #define LOG_INFO(format, ...)  ((void)0)
 #endif
 
 #if (LOG_LEVEL <= WARN )
-#define LOG_WARN_LN(format, ...)  SYSLOG_LOG(WARN,format"\n",  ##__VA_ARGS__)
 #define LOG_WARN(format, ...)     SYSLOG_LOG(WARN,format,  ##__VA_ARGS__)
 #else
-#define LOG_WARN_LN(format, ...)    ((void)0)
 #define LOG_WARN(format, ...)    ((void)0)
 #endif
 
 #if (LOG_LEVEL <= ERR )
-#define LOG_ERR_LN(format, ...)   SYSLOG_LOG(ERR,format"\n",  ##__VA_ARGS__)
 #define LOG_ERR(format, ...)      SYSLOG_LOG(ERR,format,  ##__VA_ARGS__)
 #else
-#define LOG_ERR_LN(format, ...)     ((void)0)
 #define LOG_ERR(format, ...)     ((void)0)
 #endif
 
 
 #else /*USE_SYSLOG*/
 #if (LOG_LEVEL <= INFO)
-#define LOG_INFO_LN(format, ...)  NORM_LOG(INFO,format"\n",  ##__VA_ARGS__)
 #define LOG_INFO(format, ...)  NORM_LOG(INFO,format,  ##__VA_ARGS__)
 #else
-#define LOG_INFO_LN(format, ...) ((void)0)
 #define LOG_INFO(format, ...) ((void)0)
 #endif
 
 #if (LOG_LEVEL <= WARN )
-#define LOG_WARN_LN(format, ...)  NORM_LOG(WARN,format"\n",  ##__VA_ARGS__)
 #define LOG_WARN(format, ...)     NORM_LOG(WARN,format,  ##__VA_ARGS__)
 #else
-#define LOG_WARN_LN(format, ...) ((void)0)
 #define LOG_WARN(format, ...) ((void)0)
 #endif
 
 #if (LOG_LEVEL <= ERR )
-#define LOG_ERR_LN(format, ...)   NORM_LOG(ERR,format"\n",  ##__VA_ARGS__)
 #define LOG_ERR(format, ...)   NORM_LOG(ERR,format,  ##__VA_ARGS__)
 #else
-#define LOG_ERR_LN(format, ...)  ((void)0)
 #define LOG_ERR(format, ...)  ((void)0)
 #endif
 
