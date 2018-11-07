@@ -4,9 +4,9 @@
 *  Created on: 2017.10.19
 *      Author: asia
 *
-*  API:  LOG_ERR(format, ...)
-		 LOG_WARN(format, ...)
-		 LOG_INFO(format, ...)
+*  API:  PRINT_LOG_ERR(format, ...)
+		 PRINT_LOG_WARN(format, ...)
+		 PRINT_LOG_INFO(format, ...)
 *
 */
 
@@ -15,10 +15,14 @@
 
 #include<stdio.h>
 
+/*#define USE_SYSLOG*/
+
+#ifdef USE_SYSLOG
+#include <syslog.h>
+#endif
+
 /* log level for printing */
 #define LOG_LEVEL INFO
-
-/*#define USE_SYSLOG*/
 
 /*log level*/
 #define	INFO 0
@@ -34,59 +38,42 @@ extern const char *LEVEL_STRING[];
 
 /* for MCU*/
 #define print printf
-#define NORM_LOG(level,format, ...)   print("%4s[%s() %s: %d]: "format"\n",\
-        LEVEL_STRING[level],__FUNCTION__, __FILE__, __LINE__,  ##__VA_ARGS__)
+#define _PRINT_LOG(level,format, ...)   print("%4s[%s(): %d]: "format"\n",\
+        LEVEL_STRING[level],__FUNCTION__, __LINE__,  ##__VA_ARGS__)
+
+
 
 /*  */
+
+#if (LOG_LEVEL <= INFO)
 #ifdef USE_SYSLOG
-#include <syslog.h>
-
-#if (LOG_LEVEL <= INFO)
-#define LOG_INFO(format, ...)     SYSLOG_LOG(INFO,format,  ##__VA_ARGS__)
+#define PRINT_LOG_INFO(format, ...)     SYSLOG_LOG(INFO,format,  ##__VA_ARGS__)
 #else
-#define LOG_INFO(format, ...)  ((void)0)
+#define PRINT_LOG_INFO(format, ...)  _PRINT_LOG(INFO,format,  ##__VA_ARGS__)
+#endif
+#else
+#define PRINT_LOG_INFO(format, ...)  ((void)0)
 #endif
 
 #if (LOG_LEVEL <= WARN )
-#define LOG_WARN(format, ...)     SYSLOG_LOG(WARN,format,  ##__VA_ARGS__)
+#ifdef USE_SYSLOG
+#define PRINT_LOG_WARN(format, ...)     SYSLOG_LOG(WARN,format,  ##__VA_ARGS__)
 #else
-#define LOG_WARN(format, ...)    ((void)0)
+#define PRINT_LOG_WARN(format, ...)     _PRINT_LOG(WARN,format,  ##__VA_ARGS__)
+#endif
+#else
+#define PRINT_LOG_WARN(format, ...)    ((void)0)
 #endif
 
 #if (LOG_LEVEL <= ERR )
-#define LOG_ERR(format, ...)      SYSLOG_LOG(ERR,format,  ##__VA_ARGS__)
+#ifdef USE_SYSLOG
+#define PRINT_LOG_ERR(format, ...)      SYSLOG_LOG(ERR,format,  ##__VA_ARGS__)
 #else
-#define LOG_ERR(format, ...)     ((void)0)
+#define PRINT_LOG_ERR(format, ...)      _PRINT_LOG(ERR,format,  ##__VA_ARGS__)
 #endif
-
-
-#else /*USE_SYSLOG*/
-#if (LOG_LEVEL <= INFO)
-#define LOG_INFO(format, ...)  NORM_LOG(INFO,format,  ##__VA_ARGS__)
 #else
-#define LOG_INFO(format, ...) ((void)0)
+#define PRINT_LOG_ERR(format, ...)     ((void)0)
 #endif
-
-#if (LOG_LEVEL <= WARN )
-#define LOG_WARN(format, ...)     NORM_LOG(WARN,format,  ##__VA_ARGS__)
-#else
-#define LOG_WARN(format, ...) ((void)0)
-#endif
-
-#if (LOG_LEVEL <= ERR )
-#define LOG_ERR(format, ...)   NORM_LOG(ERR,format,  ##__VA_ARGS__)
-#else
-#define LOG_ERR(format, ...)  ((void)0)
-#endif
-
-#endif/* use syslog or not */
-
-//#else /* Don't compile log to the program*/
-//#define LOG_ERR(format, ...)  ((void)0)
-//#define LOG_WARN(format, ...) ((void)0)
-//#define LOG_INFO(format, ...) ((void)0)
-//
-//#endif /* log ON OFF switch */
 
 
 //void conectRsyslog(void);
