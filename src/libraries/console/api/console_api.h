@@ -36,3 +36,4 @@ void microrl_insert_char (microrl_t   pThis, int ch);
 void console_daemon_run(void);
 
 #endif
+

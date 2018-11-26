@@ -351,7 +351,7 @@ static void terminal_print_line (microrl_t  pThis, int pos, int cursor)
 }
 
  microrl_t new_microrl(void){
-	static struct _microrl_t rl = {};
+	static struct _microrl_t rl = {0};
 	return &rl;
  }
 //*****************************************************************************

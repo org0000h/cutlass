@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <sys/types.h>
+//#include <sys/types.h>
 #include "ClassString.h"
 
 struct _string{
