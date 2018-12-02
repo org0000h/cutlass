@@ -7,6 +7,9 @@ Autor: Eugene Samoylov aka Helius (ghelius@gmail.com)
 
 #define MICRORL_LIB_VER "1.5.1"
 
+#define ON_LINUX
+//#define ON_STM32
+
 /*********** CONFIG SECTION **************/
 /*
 Command line length, define cmdline buffer size. Set max number of chars + 1,
@@ -80,8 +83,13 @@ already initialize and ready to print message */
 
 /*
 New line symbol */
-//#define _ENDL_LF
+#ifdef ON_LINUX
+#define _ENDL_LF
+#else
+#ifdef ON_STM32
 #define _ENDL_CR
+#endif
+#endif
 #if defined(_ENDL_CR)
 #define ENDL "\r"
 #elif defined(_ENDL_CRLF)
