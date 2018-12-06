@@ -241,7 +241,7 @@ static int split (microrl_t  pThis, int limit, char const ** tkn_arr)
 		}
 		if (!(ind < limit)) return i;
 	}
-	return i;
+
 }
 
 

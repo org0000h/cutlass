@@ -4,7 +4,7 @@ set(CMAKE_C_FLAGS "-Wall -std=c99")
 
 #header locations
 set(LIB_INC
-	dataStructure/api/
+	data_structure/api/
 	console/api/
 	console/implement/
 	console/portable/
@@ -15,7 +15,7 @@ include_directories( ${LIB_INC} )
 #all source to be compiled	
 aux_source_directory(./ LOG_LIB_SRCS)
 aux_source_directory(classString/ STRING_LIB_SRCS)
-aux_source_directory(dataStructure/implement DATAST_LIB_SRCS)
+aux_source_directory(data_structure/implement DATAST_LIB_SRCS)
 aux_source_directory(console CONSOLE1_LIB_SRCS)
 aux_source_directory(console/implement CONSOLE2_LIB_SRCS)
 aux_source_directory(console/portable CONSOLE3_LIB_SRCS)	

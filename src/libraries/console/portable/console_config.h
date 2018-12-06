@@ -7,8 +7,8 @@ Autor: Eugene Samoylov aka Helius (ghelius@gmail.com)
 
 #define MICRORL_LIB_VER "1.5.1"
 
-#define ON_LINUX
-//#define ON_STM32
+//#define ON_LINUX
+#define ON_STM32
 
 /*********** CONFIG SECTION **************/
 /*

@@ -16,10 +16,11 @@ NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
+#include "cutlass_hashtable.h"
+
 #include <assert.h>
 #include <stddef.h>
 
-#include "hashtable.h"
 
 void hashtable_init(
     HashTable *hashtable,

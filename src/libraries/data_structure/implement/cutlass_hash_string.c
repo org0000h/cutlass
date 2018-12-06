@@ -19,7 +19,7 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include <assert.h>
 #include <stddef.h>
 
-#include "hash_string.h"
+#include "cutlass_hash_string.h"
 
 size_t hash_string(const void *string) {
     const char *str = (const char*) string;
