@@ -6,14 +6,14 @@
  */
 
 #include <stdio.h>
-#include <stdint.h>
 #include <stdlib.h>
 
-#include "ClassString.h"
+#include "type_int.h"
+//#include "ClassString.h"
 #include "log.h"
 
 #include "common.h"
-#include "list.h"
+#include "data_structre_list.h"
 #include "console_api.h"
 int main(){
 
@@ -35,14 +35,14 @@ int main(){
 //
 
 //
-    string_t * str = string_new_with_string_copy("hello");
-    PRINT_LOG_INFO("%s",string_get(str));
-    string_append(str, "world");
-    PRINT_LOG_INFO("%s",string_get(str));
-    if(string_prepend(str, "pre ") <0){
-        PRINT_LOG_INFO("error");
-    }
-    PRINT_LOG_INFO("%s",string_get(str));
+//    string_t * str = string_new_with_string_copy("hello");
+//    PRINT_LOG_INFO("%s",string_get(str));
+//    string_append(str, "world");
+//    PRINT_LOG_INFO("%s",string_get(str));
+//    if(string_prepend(str, "pre ") <0){
+//        PRINT_LOG_INFO("error");
+//    }
+//    PRINT_LOG_INFO("%s",string_get(str));
 //
     PRINT_LOG_INFO("log test");
     PRINT_LOG_WARN("log test");

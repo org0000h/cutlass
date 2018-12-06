@@ -8,7 +8,7 @@ set(LIB_INC
 	console/api/
 	console/implement/
 	console/portable/
-	classString/
+	log/api/
 	)
 include_directories( ${LIB_INC} )
 
@@ -19,6 +19,8 @@ aux_source_directory(dataStructure/implement DATAST_LIB_SRCS)
 aux_source_directory(console CONSOLE1_LIB_SRCS)
 aux_source_directory(console/implement CONSOLE2_LIB_SRCS)
 aux_source_directory(console/portable CONSOLE3_LIB_SRCS)	
+aux_source_directory(log/implement LOG_LIB_SRCS)	
+aux_source_directory(log/portable LOG_PORTABLE_LIB_SRCS)	
 set(LIB_SRCS 
     ${LOG_LIB_SRCS} 
 	${STRING_LIB_SRCS} 
@@ -26,6 +28,8 @@ set(LIB_SRCS
 	${CONSOLE1_LIB_SRCS} 
 	${CONSOLE2_LIB_SRCS} 
 	${CONSOLE3_LIB_SRCS}
+	${LOG_LIB_SRCS}
+	${LOG_PORTABLE_LIB_SRCS}
 	)
 
 # Generate link library

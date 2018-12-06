@@ -11,7 +11,7 @@ include_directories(src/libraries
 					src/libraries/console/api
 					src/libraries/console/implement 
 					src/libraries/console/portable 
-					src/libraries/classString/
+					src/libraries/log/api
 					)
 
 # which platform 

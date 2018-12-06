@@ -13,8 +13,7 @@
 #ifndef TINY_LOG
 #define TINY_LOG
 
-#include<stdio.h>
-
+#include "printf.h"
 /*#define USE_SYSLOG*/
 
 #ifdef USE_SYSLOG
