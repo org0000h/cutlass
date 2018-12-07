@@ -31,45 +31,34 @@
 
 extern const char *LEVEL_STRING[];
 
-
-#define _SYSLOG_LOG(level, format, ...)  syslog(level,"%4s[ %s() %s: %d]:  "format"\n",\
+/* define output */
+#ifdef USE_SYSLOG
+#define _PRINT_LOG(level, format, ...)  syslog(level,"%4s[ %s() %s: %d]:  "format"\n",\
              LEVEL_STRING[level],  __FUNCTION__, __FILE__, __LINE__, ##__VA_ARGS__)
-
+#else
 /* for MCU*/
 #define print printf
 #define _PRINT_LOG(level,format, ...)   print("%4s[%s(): %d]: "format"\n",\
         LEVEL_STRING[level],__FUNCTION__, __LINE__,  ##__VA_ARGS__)
+#endif
 
 
-
-/*  */
+/* user interface */
 
 #if (LOG_LEVEL <= INFO)
-#ifdef USE_SYSLOG
-#define PRINT_LOG_INFO(format, ...)     _SYSLOG_LOG(INFO,format,  ##__VA_ARGS__)
-#else
 #define PRINT_LOG_INFO(format, ...)  _PRINT_LOG(INFO,format,  ##__VA_ARGS__)
-#endif
 #else
 #define PRINT_LOG_INFO(format, ...)  ((void)0)
 #endif
 
 #if (LOG_LEVEL <= WARN )
-#ifdef USE_SYSLOG
-#define PRINT_LOG_WARN(format, ...)     _SYSLOG_LOG(WARN,format,  ##__VA_ARGS__)
-#else
 #define PRINT_LOG_WARN(format, ...)     _PRINT_LOG(WARN,format,  ##__VA_ARGS__)
-#endif
 #else
 #define PRINT_LOG_WARN(format, ...)    ((void)0)
 #endif
 
 #if (LOG_LEVEL <= ERR )
-#ifdef USE_SYSLOG
-#define PRINT_LOG_ERR(format, ...)      _SYSLOG_LOG(ERR,format,  ##__VA_ARGS__)
-#else
 #define PRINT_LOG_ERR(format, ...)      _PRINT_LOG(ERR,format,  ##__VA_ARGS__)
-#endif
 #else
 #define PRINT_LOG_ERR(format, ...)     ((void)0)
 #endif
