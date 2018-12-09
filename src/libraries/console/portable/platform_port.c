@@ -33,7 +33,7 @@ char get_char (void){
 
 #define _NUM_OF_CMD 6
 #define _NUM_OF_VER_SCMD 2
-
+#define _NUN_OF_EVENT 5
 //available  commands
 char * keyworld [] = {_CMD_HELP, _CMD_CLEAR, _CMD_LIST, _CMD_NAME, _CMD_VER, _CMD_LISP};
 // version subcommands
@@ -47,71 +47,13 @@ char * compl_world [_NUM_OF_CMD + 1];
 char name [_NAME_LEN];
 int val;
 
+typedef struct event_handle{
+	const char *event;
+	void  (*handle)(int,const char * const * );
+}EVENT_HANDLE;
+
 
 //*****************************************************************************
-void print_help ()
-{
-    print ("Use TAB key for completion\n\rCommand:\n\r");
-    print ("\tversion {microrl | demo} - print version of microrl lib or version of this demo src\n\r");
-    print ("\thelp  - this message\n\r");
-    print ("\tclear - clear screen\n\r");
-    print ("\tlist  - list all commands in tree\n\r");
-    print ("\tname [string] - print 'name' value if no 'string', set name value to 'string' if 'string' present\n\r");
-    print ("\tlisp - dummy command for demonstation auto-completion, while inputed 'l+<TAB>'\n\r");
-}
-
-// execute callback
-int execute (int argc, const char * const * argv){
-    int i = 0;
-        // just iterate through argv word and compare it with your commands
-        while (i < argc) {
-            if (strcmp (argv[i], _CMD_HELP) == 0) {
-                print ("microrl library based shell v 1.0\n\r");
-                print_help ();        // print help
-            } else if (strcmp (argv[i], _CMD_NAME) == 0) {
-                if ((++i) < argc) { // if value preset
-                    if (strlen (argv[i]) < _NAME_LEN) {
-                        strcpy (name, argv[i]);
-                    } else {
-                        print ("name value too long!\n\r");
-                    }
-                } else {
-                    print (name);
-                    print ("\n\r");
-                }
-            } else if (strcmp (argv[i], _CMD_VER) == 0) {
-                if (++i < argc) {
-                    if (strcmp (argv[i], _SCMD_DEMO) == 0) {
-                        print ("demo v 1.0\n\r");
-                    } else if (strcmp (argv[i], _SCMD_MRL) == 0) {
-                        print ("microrl v 1.2\n\r");
-                    } else {
-                        print ((char*)argv[i]);
-                        print (" wrong argument, see help\n\r");
-                    }
-                } else {
-                    print ("version needs 1 parametr, see help\n\r");
-                }
-            } else if (strcmp (argv[i], _CMD_CLEAR) == 0) {
-                print ("\033[2J");    // ESC seq for clear entire screen
-                print ("\033[H");     // ESC seq for move cursor at left-top corner
-            } else if (strcmp (argv[i], _CMD_LIST) == 0) {
-                print ("available command:\n");// print all command per line
-                for (int i = 0; i < _NUM_OF_CMD; i++) {
-                    print ("\t");
-                    print (keyworld[i]);
-                    print ("\n\r");
-                }
-            } else {
-                print ("command: '");
-                print ((char*)argv[i]);
-                print ("' Not found.\n\r");
-            }
-            i++;
-        }
-        return 0;
-}
-
 // completion callback
 char ** complet (int argc, const char * const * argv){
     int j = 0;
@@ -151,7 +93,82 @@ char ** complet (int argc, const char * const * argv){
 
 // ctrl+c callback
 void sigint (void){
-    print ("^C catched!\n\r");
+    print ("^C catched! exit console\n\r");
+}
+
+void command_execute_help (int argc, const char * const * argv)
+{
+    print ("microrl library based shell v 1.0\n\r");
+    print ("Use TAB key for completion\n\rCommand:\n\r");
+    print ("\tversion {microrl | demo} - print version of microrl lib or version of this demo src\n\r");
+    print ("\thelp  - this message\n\r");
+    print ("\tclear - clear screen\n\r");
+    print ("\tlist  - list all commands in tree\n\r");
+    print ("\tname [string] - print 'name' value if no 'string', set name value to 'string' if 'string' present\n\r");
+    print ("\tlisp - dummy command for demonstation auto-completion, while inputed 'l+<TAB>'\n\r");
+}
+void command_execute_list(int argc, const char * const * argv){
+    print ("available command:\n");// print all command per line
+    for (int i = 0; i < _NUM_OF_CMD; i++) {
+        print ("\t");
+        print (keyworld[i]);
+        print ("\n\r");
+    }
+}
+
+void command_execute_version(int argc, const char * const * argv){
+	 int i = 0;
+    if (++i < argc) {
+        if (strcmp (argv[i], _SCMD_DEMO) == 0) {
+            print ("demo v 1.0\n\r");
+        } else if (strcmp (argv[i], _SCMD_MRL) == 0) {
+            print ("microrl v 1.2\n\r");
+        } else {
+            print ((char*)argv[i]);
+            print (" wrong argument, see help\n\r");
+        }
+    } else {
+        print ("version needs 1 parametr, see help\n\r");
+    }
+}
+void command_execute_name(int argc, const char * const * argv){
+	int i = 0;
+    if ((++i) < argc) { // if value preset
+        if (strlen (argv[i]) < _NAME_LEN) {
+            strcpy (name, argv[i]);
+        } else {
+            print ("name value too long!\n\r");
+        }
+    } else {
+        print (name);
+        print ("\n\r");
+    }
+}
+void command_execute_clear(int argc, const char * const * argv){
+    print ("\033[2J");    // ESC seq for clear entire screen
+    print ("\033[H");     // ESC seq for move cursor at left-top corner
+}
+EVENT_HANDLE event_handle_table[_NUN_OF_EVENT] = {
+		{_CMD_HELP,command_execute_help},
+		{_CMD_CLEAR,command_execute_clear},
+		{_CMD_LIST,command_execute_list},
+		{_CMD_NAME,command_execute_name},
+		{_CMD_VER,command_execute_version},
+
+};
+//
+int execute (int argc, const char * const * argv){
+	int i = 0;
+	for(i = 0; i < _NUN_OF_EVENT; i++){
+		if (strcmp (argv[0], event_handle_table[i].event) == 0) {
+			event_handle_table[i].handle(argc,argv);
+			return 0;
+		}
+	}
+	print ("command: '");
+	print ((char*)argv[i]);
+	print ("' Not found.\n\r");
+	return -1;
 }
 
 #endif
@@ -217,7 +234,7 @@ int val;
 
 
 //*****************************************************************************
-void print_help ()
+void command_execute_help ()
 {
     print ("Use TAB key for completion\n\rCommand:\n\r");
     print ("\tversion {microrl | demo} - print version of microrl lib or version of this demo src\n\r");
@@ -238,7 +255,7 @@ int execute (int argc, const char * const * argv)
     while (i < argc) {
         if (strcmp (argv[i], _CMD_HELP) == 0) {
             print ("microrl library based shell v 1.0\n\r");
-            print_help ();        // print help
+            command_execute_help ();        // print help
         } else if (strcmp (argv[i], _CMD_NAME) == 0) {
             if ((++i) < argc) { // if value preset
                 if (strlen (argv[i]) < _NAME_LEN) {

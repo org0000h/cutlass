@@ -18,20 +18,20 @@
 int main(){
 
 //
-    list_t *langs = list_new();
-
-    list_rpush(langs, list_node_new("c"));
-    list_rpush(langs, list_node_new("js"));
-    list_rpush(langs, list_node_new("python"));
-
-    list_node_t *node;
-    list_iterator_t *it = list_iterator_new(langs, LIST_HEAD);
-    while ((node = list_iterator_next(it))) {
-        PRINT_LOG_INFO("%s",(char *)node->val);
-    }
-
-    list_iterator_destroy(it);
-    list_destroy(langs);
+//    list_t *langs = list_new();
+//
+//    list_rpush(langs, list_node_new("c"));
+//    list_rpush(langs, list_node_new("js"));
+//    list_rpush(langs, list_node_new("python"));
+//
+//    list_node_t *node;
+//    list_iterator_t *it = list_iterator_new(langs, LIST_HEAD);
+//    while ((node = list_iterator_next(it))) {
+//        PRINT_LOG_INFO("%s",(char *)node->val);
+//    }
+//
+//    list_iterator_destroy(it);
+//    list_destroy(langs);
 //
 
 //
