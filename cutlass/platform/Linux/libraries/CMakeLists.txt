@@ -2,8 +2,7 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 set(CMAKE_C_FLAGS "-Wall -std=c99")
     
-ADD_DEFINITIONS(-DIN_LINUX=1)
-ADD_DEFINITIONS(-DON_LINUX=1)
+ADD_DEFINITIONS(-DON_UNIX=1)
 
 #header locations
 set(LIB_INC

@@ -977,41 +977,6 @@
               <FilePath>..\..\..\src\libraries\console\portable\platform_port.c</FilePath>
             </File>
             <File>
-              <FileName>cutlass_hash_string.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\libraries\data_structure\implement\cutlass_hash_string.c</FilePath>
-            </File>
-            <File>
-              <FileName>cutlass_hashmap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\libraries\data_structure\implement\cutlass_hashmap.c</FilePath>
-            </File>
-            <File>
-              <FileName>cutlass_hashtable.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\libraries\data_structure\implement\cutlass_hashtable.c</FilePath>
-            </File>
-            <File>
-              <FileName>cutlass_list.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\libraries\data_structure\implement\cutlass_list.c</FilePath>
-            </File>
-            <File>
-              <FileName>cutlass_queue.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\libraries\data_structure\implement\cutlass_queue.c</FilePath>
-            </File>
-            <File>
-              <FileName>cutlass_rbtree.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\libraries\data_structure\implement\cutlass_rbtree.c</FilePath>
-            </File>
-            <File>
-              <FileName>cutlass_stack.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\libraries\data_structure\implement\cutlass_stack.c</FilePath>
-            </File>
-            <File>
               <FileName>cJSON.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\src\libraries\json\cJSON.c</FilePath>
@@ -1035,6 +1000,41 @@
               <FileName>sds.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\src\libraries\sds\sds.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdsa_hash_string.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\libraries\data_structure\implement\cdsa_hash_string.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdsa_hashmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\libraries\data_structure\implement\cdsa_hashmap.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdsa_hashtable.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\libraries\data_structure\implement\cdsa_hashtable.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdsa_list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\libraries\data_structure\implement\cdsa_list.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdsa_queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\libraries\data_structure\implement\cdsa_queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdsa_rbtree.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\libraries\data_structure\implement\cdsa_rbtree.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdsa_stack.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\libraries\data_structure\implement\cdsa_stack.c</FilePath>
             </File>
           </Files>
         </Group>
