@@ -15,3 +15,14 @@ cutlassXcodeProject/cutlassXcodeProject.xcodeproj/project.pbxproj
 cutlassXcodeProject/cutlassXcodeProject.xcodeproj/project.pbxproj
 cutlassXcodeProject/cutlassXcodeProject.xcodeproj/project.xcworkspace/xcuserdata/yazhou.xcuserdatad/UserInterfaceState.xcuserstate
 *.DS_Store
+/cutlass/platform/STM32F446/MDK-ARM/f446.uvguix.asia
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.crf
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.d
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.o
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.axf
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.htm
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.hex
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.lnp
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.map
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.sct
+/cutlass/platform/STM32F446/MDK-ARM/f446/*.dep
