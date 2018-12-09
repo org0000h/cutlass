@@ -4,8 +4,7 @@
  *  Created on: 2018/12/06
  *      Author: yazhou
  */
-//#define ON_LINUX
-//#define ON_STM32
+
 #ifdef ON_UNIX
 #include <stdio.h>
 void _putchar(char character){
