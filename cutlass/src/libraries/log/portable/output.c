@@ -6,7 +6,7 @@
  */
 //#define ON_LINUX
 //#define ON_STM32
-#ifdef ON_LINUX
+#ifdef ON_UNIX
 #include <stdio.h>
 void _putchar(char character){
     fputc(character,stdout);

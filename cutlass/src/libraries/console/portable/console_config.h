@@ -8,7 +8,7 @@ Autor: Eugene Samoylov aka Helius (ghelius@gmail.com)
 #define MICRORL_LIB_VER "1.5.1"
 
 // defined in IED or cmake
-//#define ON_LINUX
+//#define ON_UNIX
 //#define ON_STM32
 
 /*********** CONFIG SECTION **************/
@@ -84,7 +84,7 @@ already initialize and ready to print message */
 
 /*
 New line symbol */
-#ifdef ON_LINUX
+#ifdef ON_UNIX
 #define _ENDL_LF
 #else
 #ifdef ON_STM32

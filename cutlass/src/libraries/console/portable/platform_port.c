@@ -174,7 +174,7 @@ int execute (int argc, const char * const * argv){
 #endif
 
 
-#ifdef ON_LINUX
+#ifdef ON_UNIX
 #include <termios.h>
 #include <stdio.h>
 #include <fcntl.h>

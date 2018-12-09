@@ -5,7 +5,7 @@
 
 //#define IN_LINUX
 
-#ifdef IN_LINUX
+#ifdef ON_UNIX
 #include <stdint.h>
 #else
 /* Exact integral types.  */
