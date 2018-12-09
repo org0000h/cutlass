@@ -166,7 +166,7 @@ int execute (int argc, const char * const * argv){
 		}
 	}
 	print ("command: '");
-	print ((char*)argv[i]);
+	print ((char*)argv[0]);
 	print ("' Not found.\n\r");
 	return -1;
 }
