@@ -5,15 +5,14 @@
  *      Author: asia
  */
 #if 1
-#include <stdio.h>
-#include <stdlib.h>
+#include "std_include.h"
 
 #include "type_int.h"
 //#include "ClassString.h"
 #include "log.h"
 
 #include "common.h"
-#include "data_structre_list.h"
+//#include "data_structre_list.h"
 #include "console_api.h"
 int main(){
 
