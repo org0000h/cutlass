@@ -11,14 +11,14 @@ for AVR, linux PC or ARM
 
 // print to stream callback
 void print (const char * str){
-    HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str) + 1, 100);
+    HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), 100);
 }
 
 // get_char from stream
 char get_char (void){
-     uint8_t r[100] = {0};
-     HAL_UART_Receive(&huart1, r, 1, 100);
-    return r[0];
+     uint8_t receive_char = 0;
+     HAL_UART_Receive(&huart1, &receive_char, 1, 100);
+    return receive_char;
 }
 // definition commands word
 #define _CMD_HELP  "help"
