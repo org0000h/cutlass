@@ -35,7 +35,6 @@
 #include <stdarg.h>
 #include <stddef.h>
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -101,5 +100,7 @@ int fctprintf(void (*out)(char character, void* arg), void* arg, const char* for
 }
 #endif
 
+#define perror _perror
+void _perror(const char * message);
 
 #endif  // _PRINTF_H_

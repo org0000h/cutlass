@@ -85,6 +85,7 @@ osThreadId shellHandle;
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 #include "printf.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
@@ -420,11 +421,12 @@ void Taskshell(void const * argument)
 {
   /* USER CODE BEGIN Taskshell */
    /* print the version */
+	
     printf("Version: %s\n", cJSON_Version());
 
     /* Now some samplecode for building objects concisely: */
-   create_objects();
-
+		create_objects();
+		perror("test");
     console_daemon_run();
   /* Infinite loop */
   for(;;)

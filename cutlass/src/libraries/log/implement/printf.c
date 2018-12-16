@@ -1,5 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
-// \author (c) Marco Paland (info@paland.com)
+///////////////////////////////////////////////////////////////////////////////// \author (c) Marco Paland (info@paland.com)
 //             2014-2018, PALANDesign Hannover, Germany
 //
 // \license The MIT License (MIT)
@@ -32,6 +31,8 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
+#include <errno.h>
 
 #include "printf.h"
 
@@ -757,4 +758,9 @@ int fctprintf(void (*out)(char character, void* arg), void* arg, const char* for
   const int ret = _vsnprintf(_out_fct, (char*)&out_fct_wrap, (size_t)-1, format, va);
   va_end(va);
   return ret;
+}
+
+void _perror(const char * message){
+	char *strr = strerror(errno);
+	printf("%s: %s\r\n",message, strr);
 }
