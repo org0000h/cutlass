@@ -9,7 +9,8 @@ set(LIB_INC
 	../../../src/libraries/data_structure/api/
 	../../../src/libraries/console/api/
 	../../../src/libraries/console/implement/
-	../../../src/libraries/console/portable/
+	../../../src/libraries/console/interface/
+	../../../src/libraries/console/
 	../../../src/libraries/log/api/
 	../../../src/libraries/mbedTLS/include/
 	)
@@ -21,9 +22,9 @@ aux_source_directory(../../../src/libraries/classString/ STRING_LIB_SRCS)
 aux_source_directory(../../../src/libraries/data_structure/implement DATAST_LIB_SRCS)
 aux_source_directory(../../../src/libraries/console CONSOLE1_LIB_SRCS)
 aux_source_directory(../../../src/libraries/console/implement CONSOLE2_LIB_SRCS)
-aux_source_directory(../../../src/libraries/console/portable CONSOLE3_LIB_SRCS)	
+aux_source_directory(../../../src/libraries/console/interface CONSOLE3_LIB_SRCS)	
 aux_source_directory(../../../src/libraries/log/implement LOG_LIB_SRCS)	
-aux_source_directory(../../../src/libraries/log/portable LOG_PORTABLE_LIB_SRCS)	
+aux_source_directory(../../../src/libraries/log/interface LOG_PORTABLE_LIB_SRCS)	
 aux_source_directory(../../../src/libraries/mbedTLS/library MBEDTLS_LIB_SRCS)	
 set(LIB_SRCS 
     ${LOG_LIB_SRCS} 

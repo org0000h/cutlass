@@ -10,7 +10,8 @@ include_directories(../../src/libraries
 					../../src/libraries/dataStructure/api 
 					../../src/libraries/console/api
 					../../src/libraries/console/implement 
-					../../src/libraries/console/portable 
+					../../src/libraries/console/interface 
+					../../src/libraries/console/ 
 					../../src/libraries/log/api
 				    ../../src/libraries/mbedTLS/include/
 					)
