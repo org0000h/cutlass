@@ -1,8 +1,8 @@
 #ifndef _MICRORL_H_
 #define _MICRORL_H_
 
-#include "console_config.h"
 #include "platform_port.h"
+#include "console_config.h"
 
 #define true  1
 #define false 0

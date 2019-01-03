@@ -2,9 +2,10 @@
 Platform independent interface for implementing some specific function
 for AVR, linux PC or ARM
 */
-#include "console_config.h"
 #include "stdint.h"
 #include <string.h>
+
+#include "console_config.h"
 
 #ifdef ON_STM32
 #include "usart.h"
