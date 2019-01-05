@@ -320,7 +320,7 @@ RESULT Tcp_SetupConnectionRetyrSync(	  int *socket_fd,
 		return SUCCEED;
 	}
 }
-int main(int argc,char **argv){
+int _main(int argc,char **argv){
 
 		#define RECV_BUFFER_LEN 40000 // you have to make it big enough to receive the whole data from server
 		char *send_data = "GET / HTTP/1.1\r\n\r\n";
