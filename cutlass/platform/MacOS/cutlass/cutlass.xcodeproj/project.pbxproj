@@ -26,6 +26,7 @@
 		378F7650223E17D60020401E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 378F7416223E17D50020401E /* Makefile */; };
 		378F7651223E17D60020401E /* sample.c in Sources */ = {isa = PBXBuildFile; fileRef = 378F7417223E17D50020401E /* sample.c */; };
 		378F7652223E17D60020401E /* microrl.c in Sources */ = {isa = PBXBuildFile; fileRef = 378F7419223E17D50020401E /* microrl.c */; };
+		378F7657223E1E960020401E /* net_tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = 378F7656223E1E960020401E /* net_tcp.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,7 +68,6 @@
 		378F73F9223E17D50020401E /* sdsalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdsalloc.h; sourceTree = "<group>"; };
 		378F73FA223E17D50020401E /* type_int.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = type_int.h; sourceTree = "<group>"; };
 		378F73FC223E17D50020401E /* socket_tcp_server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_tcp_server.c; sourceTree = "<group>"; };
-		378F73FD223E17D50020401E /* socket_tcp_client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket_tcp_client.h; sourceTree = "<group>"; };
 		378F73FE223E17D50020401E /* socket_tcp_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_tcp_client.c; sourceTree = "<group>"; };
 		378F7400223E17D50020401E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		378F7401223E17D50020401E /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
@@ -93,6 +93,8 @@
 		378F741D223E17D50020401E /* console_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = console_config.h; sourceTree = "<group>"; };
 		378F7653223E18D20020401E /* Linux */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linux; sourceTree = "<group>"; };
 		378F7654223E18D20020401E /* STM32F446 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = STM32F446; sourceTree = "<group>"; };
+		378F7655223E1E960020401E /* net_tcp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = net_tcp.h; sourceTree = "<group>"; };
+		378F7656223E1E960020401E /* net_tcp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = net_tcp.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,8 +253,9 @@
 			isa = PBXGroup;
 			children = (
 				378F73FC223E17D50020401E /* socket_tcp_server.c */,
-				378F73FD223E17D50020401E /* socket_tcp_client.h */,
 				378F73FE223E17D50020401E /* socket_tcp_client.c */,
+				378F7655223E1E960020401E /* net_tcp.h */,
+				378F7656223E1E960020401E /* net_tcp.c */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				378F764E223E17D60020401E /* printf.c in Sources */,
 				378F7640223E17D60020401E /* sample.c in Sources */,
 				378F764B223E17D60020401E /* cJSON.c in Sources */,
+				378F7657223E1E960020401E /* net_tcp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

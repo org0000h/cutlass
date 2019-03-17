@@ -1,5 +1,5 @@
 /* Server code in C */
-#if 1
+#if 0
 #define _main main
 #endif
 #include <sys/types.h>
@@ -12,85 +12,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-typedef enum{
-	SUCCEED = 200,
-	FAILED = -1,
-}RESULT;
-// you should to know how many bytes data you need to receive
-// this function will return when it received the whole data or it received data as many bytes as the paramater  recv_buf_len you passed in
-RESULT Tcp_ReadWithSelect(	const int socket_fd,
-						  uint8_t* recv_buf,
-					const uint32_t recv_buf_len,
-					const uint32_t timeout_ms){
 
-    fd_set read_fds;
-    struct timeval timeout;
-
-    timeout.tv_sec = timeout_ms / 1000;
-    timeout.tv_usec =(timeout_ms % 1000) * 1000;
-
-    int size_recv , total_size = 0;
-    while(1)// only if it is interrupted by signal, then redo
-    {
-		FD_ZERO(&read_fds);
-		FD_SET(socket_fd, &read_fds);
-        int Ret = select(socket_fd + 1, &read_fds, NULL, NULL, &timeout);
-        if (Ret == 0)
-        {
-        /* Zero fds ready means we timed out */
-            printf("recv select  timeout ...\n");
-            return FAILED;
-        }
-        else if (Ret < 0)
-        {
-            perror("recv select");
-            return FAILED;
-        }
-        else
-        { // there is date to be read on tcp
-            if((size_recv =  recv(socket_fd ,  recv_buf, recv_buf_len, 0) ) == -1)
-            {
-            	perror("recv");
-                if (errno == EWOULDBLOCK || errno == EAGAIN)
-                {
-                    printf("recv timeout ...\n");
-                    return FAILED;
-                }
-                else if (errno == EINTR)
-                {
-                    printf("recv interrupt by signal...\n");
-                    continue;
-                }
-                else if (errno == ENOENT)
-                {
-                    printf("recv RST segement...\n");
-                    return FAILED;
-                }
-                else
-                {
-                    return FAILED;
-                }
-            }
-            else if (size_recv == 0)
-            {
-                printf("recv: peer closed .\r\n");
-                return FAILED;
-            }
-            else
-            {
-                total_size += size_recv;
-                if(recv_buf_len == size_recv){
-                	printf("recv buffer is too small , there is more data to receive!");
-                	return FAILED;
-                }
-                printf("received, total_size = %d bytes\n", total_size);
-                printf("recv content:%s\r\n",recv_buf);;
-                return SUCCEED;
-            }
-        }
-    }
-
-}
 
 int _main(void)
 {
